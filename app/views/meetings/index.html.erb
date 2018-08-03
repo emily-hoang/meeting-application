@@ -1,1 +1,22 @@
-<h1>Hello Meetings!</h1>
+<h1>Listing meetings</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% @meetings.each do |meeting| %>
+    <tr>
+      <td><%= meeting.title %></td>
+      <td><%= meeting.description %></td>
+      <td><%= link_to 'Show', meeting_path(meeting) %></td>
+      <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+      <td><%= link_to 'Destroy', meeting_path(meeting),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+

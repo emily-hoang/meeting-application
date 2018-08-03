@@ -1,27 +1,53 @@
+
 class MeetingsController < ApplicationController
 
-	def index
-	end
+  def index
+    @meetings = Meeting.all
+  end
 
-	def show
-		@meeting = Meeting.find(params[:id])
-		
-	end
+  def show
+    @meeting = Meeting.find(params[:id])
+  end
 
-	def new
-		@meeting = Meeting.new
+  def new
+    @meeting = Meeting.new
+  end
 
-	end
+  def edit
+    @meeting = Meeting.find(params[:id])
+    
+  end
+ 
+  def create
+    @meeting = Meeting.new(meeting_params)
+ 
+    if @meeting.save
+      redirect_to @meeting
+    else
+    render 'new'
+    end
+  end
 
-	def create
-		@meeting = Meeting.new(params[:meeting])
-		@meeting.save
+  def update
+    @meeting = Meeting.find(params[:id])
 
-		redirect to @meeting
-	end
+    if @meeting.update(meeting_params)
+      redirect_to @meeting
+    else
+      render 'edit'
+    end 
+  end
 
-	private
-		def meetings_params
-			params.require(:meeting).permit(:title, :text)
-		end
+  def destroy
+    @meeting = Meeting.find(params[:id])
+    @meeting.destroy
+
+    redirect_to meetings_path
+    
+  end
+ 
+private
+  def meeting_params
+    params.require(:meeting).permit(:title, :description)
+  end
 end
