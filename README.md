@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+-------
+
+rails g migration add_meeting_date_to_meeting meeting_date:datetime

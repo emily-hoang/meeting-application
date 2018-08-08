@@ -1,5 +1,5 @@
 
-<%= form_with model: @meeting, local: true do |form| %>
+<%= form_for @meeting do |form| %>
  
   <% if @meeting.errors.any? %>
     <div id="error_explanation">
@@ -15,10 +15,8 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :date_time %><br>
-    <%= form.text_field :date_time %>
-  </p>
+    <%= form.label :meeting_date %><br>
+    <%= form.datetime_local_field :meeting_date %>
  
   <p>
     <%= form.label :title %><br>
@@ -26,8 +24,8 @@
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
   </p>
  
   <p>

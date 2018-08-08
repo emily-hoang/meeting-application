@@ -1,0 +1,21 @@
+<%= form_with(model: [@meeting, @meeting.tasks.build ]) do |form| %>
+  <p>
+    <%= form.label :tasker %><br>
+    <%= form.text_field :tasker %>
+  </p>
+
+  <p>
+    <%= form.label :task %><br>
+    <%= form.text_area :task %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+
+
+

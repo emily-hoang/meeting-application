@@ -1,3 +1,21 @@
 // Place all the styles related to the Meetinngs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background: grey;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+}
+
+th { 
+text-align: center;
+}
+
+img {
+	height: 300px;
+	width: 1000px;
+}
