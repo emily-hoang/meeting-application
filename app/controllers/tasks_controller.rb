@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 	#only :destroy
 
 	def create
-		@meeting = Meeting.find(patams[:id])
+		@meeting = Meeting.find(params[:meeting_id])
 		@task = @meeting.tasks.create(task_params)
 		redirect_to meeting_path(@meeting)
 	end
@@ -18,6 +18,6 @@ class TasksController < ApplicationController
 
 	private
 		def task_params
-			params.require(:task).permit(:tasker, :body)
+			params.require(:task).permit(:tasker, :body, :meeting_id)
 		end
 end
