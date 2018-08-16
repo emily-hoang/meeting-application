@@ -1,4 +1,4 @@
 class Meeting < ApplicationRecord
 	has_many :tasks, dependent: :destroy
-	validates :title, presence: true
+	validates :title, :description, presence: true
 end
