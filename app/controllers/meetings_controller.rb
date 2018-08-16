@@ -19,12 +19,11 @@ class MeetingsController < ApplicationController
 
   def edit
     @meeting = Meeting.find(params[:id])
-    
   end
  
   def create
     @meeting = Meeting.new(meeting_params)
- 
+
     if @meeting.save
       redirect_to @meeting
     else
