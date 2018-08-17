@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_000210) do
+ActiveRecord::Schema.define(version: 2018_08_16_065602) do
 
   create_table "meetings", force: :cascade do |t|
     t.string "title"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_16_000210) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "tasker"
+    t.string "assignee"
     t.text "body"
     t.integer "meeting_id"
     t.datetime "created_at", null: false

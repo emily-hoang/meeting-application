@@ -1,6 +1,6 @@
 <p>
-	<strong>Tasker:</strong>
-	<%= task.tasker %>
+	<strong>Assignee:</strong>
+	<%= task.assignee %>
 </p>
 
 <p>
@@ -9,7 +9,7 @@
 </p>
 
 <p>
-    <%= link_to 'Destroy Task', [task.meeting, task],
+    <%= link_to 'Destroy', [task.meeting, task],
                 method: :delete,
                 data: { confirm: 'Are you sure?'} %>
 </p>
